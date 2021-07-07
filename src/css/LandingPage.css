@@ -1,0 +1,25 @@
+.client-arrows .slick-prev:before {
+  color: #FFFFFF;
+}
+.client-arrows .slick-next:before {
+  color: #FFFFFF;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #000000;
+}
+
+
+.col-6.company-say.d-flex.flex-column {
+  border-radius: 5%;
+  height: 300px;
+}
+
+.description-blog-hide {
+display: none;
+}
+
+.description-blog-show {
+  display: block;
+}

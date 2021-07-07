@@ -1,0 +1,802 @@
+@font-face {
+    font-family: nunitoSans;
+    src: url(../fonts/NunitoSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: nunitoSans-light;
+    src: url(../fonts/NunitoSans-Light.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.text-fwb {
+    font-family: nunitoSans !important;
+}
+
+.text-description {
+    font-size: 18px;
+    font-family: nunitoSans-light;
+    color: #868786;
+}
+
+.text-title {
+    font-size: 35px;
+    font-family: nunitoSans-light;
+    color: #707070;
+}
+
+.text-sub {
+    font-size: 22px;
+    font-family: nunitoSans;
+    color: #707070;
+}
+
+.text-70 {
+    color: #707070 !important;
+}
+
+.hero-banner {
+    background-image: url(../img/mesh-gradient-1.png);
+    background-size: cover;
+    height: calc(100vh + 125px);
+    background-position: center;
+}
+
+.font-regular {
+    font-family: nunitoSans;
+}
+
+.eye-section {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.eye {
+    background-color: #de1a1b;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 0.2rem #909090);
+}
+
+.eye img {
+    max-width: 30px;
+    margin: auto;
+}
+
+.hero-section {
+    font-family: nunitoSans-light;
+    color: #707070;
+}
+
+.hero-section h1 {
+    font-size: 50px;
+}
+
+.hero-section p {
+    font-size: 20px;
+}
+
+.navbar-brand img {
+    max-width: 150px;
+}
+
+.text-danger {
+    color: #de1a1b;
+}
+
+button {
+    height: 50px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    color: #de1a1b;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: nunitoSans;
+    transition: 0.2s;
+    box-shadow: 1px 1px 3px rgb(207, 207, 207);
+    background-color: #fff;
+}
+
+.explore i {
+    font-size: 30px;
+    vertical-align: middle;
+    margin-right: -8px;
+}
+
+.navbar button {
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.navbar button:hover {
+    box-shadow: 1px 1px 3px rgb(207, 207, 207);
+}
+
+.navbar i {
+    color: #de1a1b;
+    font-size: 25px;
+}
+
+.menu-btn {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: #de1a1b;
+    transform: translate(0%, 0%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.menu-btn .bar {
+    height: 2px;
+    width: 15px;
+    background-color: #fff;
+}
+
+.menu-btn:before,
+.menu-btn:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid #de1a1b;
+    border-radius: 50%;
+}
+
+.menu-btn:before {
+    animation: ripple 2s linear infinite;
+}
+
+.menu-btn:after {
+    animation: ripple 2s linear 1s infinite;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
+.offcanvas {
+    color: #707070;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    padding-left: 50px;
+}
+
+.offcanvas ul {
+    list-style: none;
+    font-size: 25px;
+    font-family: nunitoSans-light;
+}
+.offcanvas ul li {
+    margin: 20px 0px;
+    cursor: pointer;
+}
+.offcanvas i {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.offcanvas .social {
+    padding-left: 2rem;
+    color: #de1a1b;
+}
+
+.menu-close {
+    position: absolute;
+    right: 132px;
+    top: 40px;
+    cursor: pointer;
+}
+
+#main-content {
+    width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    -moz-border-radius: 20px;
+    -moz-box-shadow: #222 5px 5px 5px;
+    -webkit-border-radius: 20px;
+    -webkit-box-shadow: #222 5px 5px 5px;
+    position: relative;
+}
+
+#zoom {
+    margin-top: -197.27px;
+}
+
+.zoom {
+    display: block;
+    margin: 0 auto;
+}
+
+.small h1 {
+    font-size: 50px;
+    width: 735px;
+}
+
+.small h2 {
+    font-size: 20px;
+    width: 675px;
+}
+
+.large h2 {
+    font-size: 25px;
+    width: 844px;
+    margin: 0;
+}
+
+.large h1 {
+    font-size: 60px;
+    width: 885px;
+    /* width: 885px; */
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.az-zoom {
+    border-radius: 50%;
+    border: 4px solid #969796;
+    cursor: none;
+    width: 80px !important;
+    height: 80px !important;
+    box-shadow: none;
+    background-image: radial-gradient(#a7a5a5, #fff 100%);
+}
+
+.verticle {
+    margin-top: auto;
+    height: 150px;
+    border-left: 2px dashed #de1a1b;
+    position: absolute;
+    top: calc(100% - 40px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slick-current {
+    opacity: 1;
+}
+
+.ai100 .slide-arrow {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: nunitoSans;
+    transition: 0.2s;
+    box-shadow: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #7a7a7a;
+    background-size: 45%;
+}
+
+.cards-slider .slide-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: nunitoSans;
+    transition: 0.2s;
+    box-shadow: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid #7a7a7a;
+    background-size: 35%;
+}
+
+.lab-slider .slide-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: nunitoSans;
+    transition: 0.2s;
+    box-shadow: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid #7a7a7a;
+    background-size: 35%;
+}
+
+.award-slider .slide-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: nunitoSans;
+    transition: 0.2s;
+    box-shadow: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid #7a7a7a;
+    background-size: 35%;
+}
+
+.our-slider .slide-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: nunitoSans;
+    transition: 0.2s;
+    box-shadow: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid #7a7a7a;
+    background-size: 35%;
+}
+
+.ai100 .prev-arrow {
+    background-image: url(../img/left_arrow.png);
+    position: absolute;
+    top: -34px;
+    left: 25%;
+}
+
+.cards-slider .prev-arrow {
+    background-image: url(../img/left_arrow.png);
+    position: absolute;
+    top: 50%;
+    left: -40px;
+    transform: translateY(-50%);
+}
+
+.lab-slider .prev-arrow {
+    background-image: url(../img/left_arrow.png);
+    position: absolute;
+    top: 50%;
+    left: -40px;
+    transform: translateY(-50%);
+}
+
+.award-slider .prev-arrow {
+    background-image: url(../img/left_arrow.png);
+    position: absolute;
+    top: 50%;
+    left: -40px;
+    transform: translateY(-50%);
+    background-color: transparent;
+}
+
+.our-slider .prev-arrow {
+    background-image: url(../img/left_arrow_white.png);
+    position: absolute;
+    top: calc(100% - 95px);
+    right: 120px;
+    z-index: 15;
+    border-color: #fff;
+    background-color: transparent;
+}
+
+.ai100 .next-arrow {
+    background-image: url(../img/right_arrow.png);
+    order: -1;
+    position: absolute;
+    top: -34px;
+    right: 25%;
+}
+
+.cards-slider .next-arrow {
+    background-image: url(../img/right_arrow.png);
+    order: -1;
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+}
+
+.lab-slider .next-arrow {
+    background-image: url(../img/right_arrow.png);
+    order: -1;
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+}
+
+.award-slider .next-arrow {
+    background-image: url(../img/right_arrow.png);
+    order: -1;
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+    background-color: transparent;
+}
+
+.our-slider .next-arrow {
+    background-image: url(../img/right_arrow_white.png);
+    order: -1;
+    position: absolute;
+    top: calc(100% - 95px);
+    right: 50px;
+    background-color: transparent;
+    border-color: #fff;
+    z-index: 15;
+}
+
+.slick-disabled {
+    opacity: 0.5;
+}
+
+.microscope {
+    background-image: url(../img/mesh-gradient-2.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.microscope .a1 {
+    width: 100px;
+}
+
+.micro-product {
+    border-radius: 50%;
+    height: 760px;
+}
+
+.slick-slide {
+    display: flex;
+}
+
+.blood {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    box-shadow: 0px 10px 10px rgb(134 135 134 / 20%);
+}
+
+.blood img {
+    width: 60%;
+    margin: auto;
+}
+
+.policy {
+    height: 100vh;
+    display: flex;
+}
+
+.policy h1 {
+    font-size: 80px;
+    font-family: nunitoSans;
+    color: #de1a1b;
+    margin: 0;
+}
+
+.policy h5 {
+    font-size: 19px;
+    font-family: nunitoSans;
+    color: #707070;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+#media-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+.video-text {
+    min-height: 100vh;
+    color: #fff;
+    padding-top: 80px;
+}
+
+.video-section {
+    background: linear-gradient(115.59deg, rgba(0, 0, 0, 0.68) 23.8%, rgba(0, 0, 0, 0) 51.9%);
+}
+
+.video-text h1 {
+    font-size: 50px;
+    font-family: nunitoSans;
+}
+
+.video-text p {
+    font-size: 20px;
+    font-family: nunitoSans-light;
+    font-weight: 100;
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+}
+
+.play-btn i {
+    color: #fff;
+    font-size: 50px;
+    margin-top: -9px;
+    margin-left: 9px;
+}
+
+@media only screen and (min-width: 1400px) {
+    .micro-product {
+        height: 879.99px;
+    }
+
+    .ai100 .prev-arrow {
+        left: 30%;
+    }
+
+    .ai100 .next-arrow {
+        right: 30%;
+    }
+}
+
+.py-100,
+.pt-100 {
+    padding-top: 100px;
+}
+
+.py-100,
+.pb-100 {
+    padding-bottom: 100px;
+}
+
+.nav-link.active {
+    background-color: #de1a1b !important;
+    /* z-index: 10 !important; */
+    position: relative;
+    transition: 0;
+}
+.nav-link:hover {
+    color: #868786;
+}
+.nav-link {
+    background-color: #f3f3f3 !important;
+    height: auto;
+    border-radius: 20px;
+    color: #868786;
+    font-family: nunitoSans-light;
+    font-weight: 100;
+    transition: none;
+    border-radius: 50px !important;
+    /* z-index: -1; */
+}
+
+.nav-link-1 {
+    margin-right: -15px;
+}
+
+.nav-link-2 {
+    margin-left: -15px;
+}
+
+.cards {
+    padding: 30px;
+    height: 330px;
+    display: flex !important;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgb(134 135 134 / 20%);
+    border-radius: 30px;
+}
+
+.our-client {
+    background-image: url(../img/mesh-gradient-3.png);
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+}
+
+.our-slider {
+    background: linear-gradient(to left, #de1a1b 50%, #fff 50%);
+    height: 400px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.our-slider .client-say {
+    /* border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px; */
+    border-top-right-radius: 50px;
+    height: 400px;
+    /* box-shadow: 0px 0px 10px rgb(134 135 134 / 20%); */
+    padding: 0px 60px;
+}
+
+.our-slider .client-say .name img {
+    height: 70px;
+    width: 70px;
+}
+
+.our-slider .client-say .name p {
+    font-size: 12px;
+    font-family: nunitoSans;
+    color: #707070;
+    margin: 0;
+}
+
+.cot {
+    width: 70px;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    z-index: 10;
+}
+/* 
+.company-say {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+} */
+
+.lab-card {
+    box-shadow: 0 5px 15px rgb(134 135 134 / 20%);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.lab-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    padding: 15px;
+    border-top-right-radius: 10px;
+    width: 80%;
+}
+
+.lab-text h3 {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.lab-text span {
+    font-size: 12px;
+    color: #de1a1b;
+    font-weight: nunitoSans;
+    font-weight: bold;
+}
+
+.lab-text a {
+    font-size: 12px;
+}
+
+.lab-text i {
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+.award {
+    background-image: url(../img/mesh-gradient-4.png);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: bottom;
+    height: 100vh;
+}
+
+.award-slider img {
+    max-width: 200px;
+}
+
+.award-slider .w-200 {
+    width: 200px;
+}
+
+.award-slider hr {
+    color: #707070;
+}
+
+.award-slider .slick-dots li button {
+    box-shadow: none;
+    border-radius: 0;
+    height: auto;
+    width: auto;
+}
+
+.award-slider .slick-dots li button:before {
+    font-size: 30px;
+    color: #868786;
+}
+
+.award-slider .slick-dots li {
+    margin: 0;
+}
+
+.award-slider .slick-dots {
+    margin: 0 -1.5rem;
+}
+
+.award-slider .slick-dots li.slick-active button:before {
+    color: #868786;
+}
+
+.simple {
+    background-image: url(../img/simple.png);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    color: #fff;
+}
+
+.simple h1 {
+    font-size: 50px;
+    font-family: nunitoSans-light;
+}
+
+.simple p {
+    font-size: 20px;
+    font-family: nunitoSans-light;
+    font-weight: 100;
+}
+
+footer {
+    background-image: url(../img/mesh-gradient-5.png);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: bottom;
+}
+
+footer p {
+    font-size: 16px !important;
+}
+
+footer i {
+    font-size: 25px !important;
+    color: #de1a1b;
+    cursor: pointer;
+}

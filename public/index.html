@@ -3,18 +3,103 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/fonts/icons.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/zoom/anythingzoomer.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/slick.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/slick-theme.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/style.css">
+    <script src="%PUBLIC_URL%/bootstrap/js/bootstrap.min.js"></script>
+    <script src="%PUBLIC_URL%/zoom/jquery.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/slick.min.js"></script>
+    <script src="%PUBLIC_URL%/zoom/jquery.anythingzoomer.js"></script>
+    <script>
+      $(function () {
+          $("#zoom").anythingZoomer({
+              clone: true
+          });
+      });
+      $(".ai100").slick({
+            infinite: false,
+            slidesToShow: 1,
+            prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+            nextArrow: '<button class="slide-arrow next-arrow"></button>',
+        });
+        $(".cards-slider").slick({
+            infinite: false,
+            slidesToShow: 3,
+            prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+            nextArrow: '<button class="slide-arrow next-arrow"></button>',
+        });
+        $(".lab-slider").slick({
+            infinite: false,
+            slidesToShow: 3,
+            prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+            nextArrow: '<button class="slide-arrow next-arrow"></button>',
+        });
+        $(".award-slider").slick({
+            infinite: false,
+            slidesToShow: 3,
+            dots: true,
+            prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+            nextArrow: '<button class="slide-arrow next-arrow"></button>',
+        });
+        $(".our-slider").slick({
+            infinite: false,
+            slidesToShow: 1,
+            prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+            nextArrow: '<button class="slide-arrow next-arrow"></button>',
+        });
+        
+        $('#play-pause-button').click(function () {
+            var mediaVideo = $("#media-video").get(0);
+            if (mediaVideo.paused) {
+                mediaVideo.play();
+                $("#play-pause-button").fadeOut();
+            } else {
+                mediaVideo.pause();
+            }
+            $('#media-video').on('ended', function () {
+                $("#play-pause-button").fadeIn();
+            });
+        });
+
+        $('.play-btn1').click(function () {
+            var mediaVideo = $(".tab-video").get(0);
+            if (mediaVideo.paused) {
+                mediaVideo.play();
+                $(".play-btn1").fadeOut();
+            } else {
+                mediaVideo.pause();
+            }
+            $('.tab-video').on('ended', function () {
+                $(".play-btn1").fadeIn();
+            });
+        });
+        $('.play-btn2').click(function () {
+            var mediaVideo = $(".tab-video2").get(0);
+            if (mediaVideo.paused) {
+                mediaVideo.play();
+                $(".play-btn2").fadeOut();
+            } else {
+                mediaVideo.pause();
+            }
+            $('.tab-video2').on('ended', function () {
+                $(".play-btn2").fadeIn();
+            });
+        });
+      </script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
