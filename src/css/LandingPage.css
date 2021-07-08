@@ -23,3 +23,9 @@ display: none;
 .description-blog-show {
   display: block;
 }
+
+.me-3 {
+  height: 96px;
+  width: 96px;
+  border-radius: 112.5px;
+}

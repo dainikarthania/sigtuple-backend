@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
 import NextArrow from '../Arrow/NextArrow';
 import PrevArrow from '../Arrow/PrevArrow';
+import Api from '../../Api';
 
 
 const Reviews = () =>{
+    const [publication,setPublication] = useState([])
 
     let nextArrow = {
         display: "flex",
@@ -48,72 +50,41 @@ const Reviews = () =>{
         slidesToScroll: 3,
         nextArrow: <NextArrow reviewNext={nextArrow}/>,
         prevArrow: <PrevArrow reviewPrev={prevArrow}/>};
+        
+        useEffect(()=>{
+            const getPublication = async () =>{
+                let data=await Api.get('/publications')
+                console.log(data)
+                setPublication(data.data)
+            }
+            getPublication()
+        },[])
+
+        let renderItems = publication.map(p=>{
+            return (
+                <div class="p-3" key={p.id}>
+                <div class="cards">
+                    <div class="d-flex">
+                        <span class="text-danger text-fwb fw-bold">{p.title}</span>
+                        <span class="text-70 ms-auto text-fwb">{new Date(p.publish_at).getFullYear()}</span>
+                    </div>
+                    <p class="text-description mt-4">
+                        {p.description.length > 150 ? `${p.description.substring(0,150)}...` : p.description}
+                    </p>
+                    <span class="text-70 d-flex mt-auto">
+                        <img src="assets/img/bookmark.png" class="d-inline me-2 my-auto"/>{p.type}
+                    </span>
+                </div>
+            </div>
+            
+            )
+        })
 
     return (
+    renderItems ?
     <Slider {...settings2}>
-        <div class="p-3">
-            <div class="cards">
-                <div class="d-flex">
-                    <span class="text-danger text-fwb fw-bold">CVMI 2019</span>
-                    <span class="text-70 ms-auto text-fwb">2019</span>
-                </div>
-                <p class="text-description mt-4">
-                    Automated focus distance estimation for digital microscopy using deep convolutional neural
-                                                                                    networks
-                </p>
-                <span class="text-70 d-flex mt-auto">
-                    <img src="assets/img/bookmark.png" class="d-inline me-2 my-auto"/>Presentation
-                </span>
-            </div>
-        </div>
-        <div class="p-3">
-            <div class="cards">
-                <div class="d-flex">
-                    <span class="text-danger text-fwb fw-bold">AAO manuscript</span>
-                    <span class="text-70 ms-auto text-fwb">2019</span>
-                </div>
-                <p class="text-description mt-4">
-                    Comparison of Deep Learning System classifier results to specialist grading for Referable
-                                                                                    Diabetic Retinopathy (RDR) in
-                                                                                    fundus images
-                </p>
-                <span class="text-70 d-flex mt-auto">
-                    <img src="assets/img/bookmark.png" class="d-inline me-2 my-auto"/>Journal publication
-                </span>
-            </div>
-        </div>
-        <div class="p-3">
-            <div class="cards">
-                <div class="d-flex">
-                    <span class="text-danger text-fwb fw-bold">APTOS 2019</span>
-                    <span class="text-70 ms-auto text-fwb">2019</span>
-                </div>
-                <p class="text-description mt-4">
-                    Validation of results of OCT Macula categorisation by Artificial Intelligence (AI) algorithm
-                                                                                    compared to specialist
-                                                                                    labelling
-                </p>
-                <span class="text-70 d-flex mt-auto">
-                    <img src="assets/img/bookmark.png" class="d-inline me-2 my-auto"/>Abstract Publication
-                </span>
-            </div>
-        </div>
-        <div class="p-3">
-            <div class="cards">
-                <div class="d-flex">
-                    <span class="text-danger text-fwb fw-bold">CVMI 2019</span>
-                    <span class="text-70 ms-auto text-fwb">2019</span>
-                </div>
-                <p class="text-description mt-4">
-                    Automated focus distance estimation for digital microscopy using deep convolutional neural
-                                                                                    networks
-                </p>
-                <span class="text-70 d-flex mt-auto">
-                    <img src="assets/img/bookmark.png" class="d-inline me-2 my-auto"/>Presentation
-                </span>
-            </div>
-        </div>
-    </Slider>
+       {renderItems}
+    </Slider> : null
     )
 }
 

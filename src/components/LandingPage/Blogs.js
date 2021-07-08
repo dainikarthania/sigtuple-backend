@@ -93,14 +93,19 @@ const Blogs = () =>{
     const renderItems=BlogContents.map(b=>{
         if(b.id==showBlog){
             return(
-                <div class="p-3" key={b.id}>
+                <div class="p-3" key={b.id} >
                 <div class="lab-card position-relative">
                     <img src="assets/img/lab-1.png" class="img-fluid"/>
-                    <div class="lab-text">
-                        <span>{b.duration} read</span>
-                        <h3 class="text-sub mb-1" onMouseOver={(e=>{
+                    <div class="lab-text" onMouseEnter={(e=>{
+                            e.preventDefault();
                             setBlogShow(b.id)
-                        })}>{b.title}</h3>
+                        })} onMouseLeave={(e=>{
+                            e.preventDefault();
+                            console.log("hello 1")
+                            setBlogShow(null)
+                        })}>
+                        <span>{b.duration} read</span>
+                        <h3 class="text-sub mb-1">{b.title}</h3>
                          <div className='description-blog-show'>
                         <span class="text-70 fw-normal d-block">
                             {b.description}
@@ -122,11 +127,12 @@ const Blogs = () =>{
                 <div class="p-3" key={b.id}>
                 <div class="lab-card position-relative">
                     <img src="assets/img/lab-1.png" class="img-fluid"/>
-                    <div class="lab-text">
-                        <span>{b.duration} read</span>
-                        <h3 class="text-sub mb-1" onMouseOver={(e=>{
+                    <div class="lab-text" onMouseEnter={(e=>{
+                            e.preventDefault();
                             setBlogShow(b.id)
-                        })}>{b.title}</h3>
+                        })}>
+                        <span>{b.duration} read</span>
+                        <h3 class="text-sub mb-1">{b.title}</h3>
                          <div className='description-blog-hide'>
                         <span class="text-70 fw-normal d-block">
                             {b.description}
@@ -142,8 +148,7 @@ const Blogs = () =>{
                 </div>
             </div>
             )
-        }
-        
+        }  
     })
 
 
