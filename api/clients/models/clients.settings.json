@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "name": "Clients",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Username": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "profilepic": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "designation": {
+      "type": "string",
+      "required": true
+    },
+    "review": {
+      "type": "string"
+    },
+    "review_title": {
+      "type": "string"
+    },
+    "short_review": {
+      "type": "string"
+    },
+    "work_at": {
+      "type": "string"
+    }
+  }
+}
