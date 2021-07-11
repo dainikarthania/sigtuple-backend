@@ -55,13 +55,13 @@ const MicroProduct = () => {
         <div>
               <Slider {...setting_ai100}>
                                 <div>
-                                    <img src="assets/img/microscope.png" class="img-fluid mx-auto"/>
+                                    <img src="assets/img/microscope.png" className="img-fluid mx-auto"/>
                                 </div>
                                 <div>
-                                    <img src="assets/img/microscope.png" class="img-fluid mx-auto"/>
+                                    <img src="assets/img/microscope.png" className="img-fluid mx-auto"/>
                                 </div>
                                 <div>
-                                    <img src="assets/img/microscope.png" class="img-fluid mx-auto"/>
+                                    <img src="assets/img/microscope.png" className="img-fluid mx-auto"/>
                                 </div>
             </Slider>
         </div>

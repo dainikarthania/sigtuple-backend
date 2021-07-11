@@ -62,17 +62,17 @@ const Reviews = () =>{
 
         let renderItems = publication.map(p=>{
             return (
-                <div class="p-3" key={p.id}>
-                <div class="cards">
-                    <div class="d-flex">
-                        <span class="text-danger text-fwb fw-bold">{p.title}</span>
-                        <span class="text-70 ms-auto text-fwb">{new Date(p.publish_at).getFullYear()}</span>
+                <div className="p-3" key={p.id}>
+                <div className="cards">
+                    <div className="d-flex">
+                        <span className="text-danger text-fwb fw-bold">{p.title}</span>
+                        <span className="text-70 ms-auto text-fwb">{new Date(p.publish_at).getFullYear()}</span>
                     </div>
-                    <p class="text-description mt-4">
+                    <p className="text-description mt-4">
                         {p.description.length > 150 ? `${p.description.substring(0,150)}...` : p.description}
                     </p>
-                    <span class="text-70 d-flex mt-auto">
-                        <img src="assets/img/bookmark.png" class="d-inline me-2 my-auto"/>{p.type}
+                    <span className="text-70 d-flex mt-auto">
+                        <img src="assets/img/bookmark.png" className="d-inline me-2 my-auto"/>{p.type}
                     </span>
                 </div>
             </div>

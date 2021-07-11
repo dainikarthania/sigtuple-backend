@@ -4,11 +4,11 @@ const VideoDescription = () =>{
     const [show,setShow] = useState(true)
     const ref=useRef()
     return (
-         <div class="container-fluid px-0 position-relative video-section">
+         <div className="container-fluid px-0 position-relative video-section">
         <video muted id="media-video" ref={ref}>
             <source src="assets/video/video.mp4" type="video/mp4"/>
         </video>
-        <div class="video-text container">
+        <div className="video-text container">
             <h1>
                 SigTuple Combined Robotics &
                 <br/>
@@ -16,13 +16,13 @@ const VideoDescription = () =>{
                     Artificial Intelligence
                 </b>
             </h1>
-            <p class="textdescription">
+            <p className="textdescription">
                 to build a smart screening solution.
                 <br/>
                 Healthcare made accessible, accurate, and affordable.
             </p>
         </div>
-        <div id="play-pause-button" class="play-btn" onClick={(e=>{
+        <div id="play-pause-button" className="play-btn" onClick={(e=>{
             if(show){
                 setShow(false)
                 ref.current.play()
@@ -32,7 +32,7 @@ const VideoDescription = () =>{
                 ref.current.pause()
             }
         })}>
-            {show ? <i class="bi bi-play-fill"></i> :  <i class="bi bi-pause-fill"></i> }
+            {show ? <i className="bi bi-play-fill"></i> :  <i className="bi bi-pause-fill"></i> }
         </div>
     </div>
     )

@@ -63,16 +63,16 @@ const Client = () => {
 
     const renderItems = clients.map(c=>{
         return (
-            <div class="d-flex mx-0 px-2 pb-2" key={c.id}>
-            <div class="col-6 client-say d-flex flex-column">
-                <div class="my-auto">
-                    <p class="text-description fw-bold">
+            <div className="d-flex mx-0 px-2 pb-2" key={c.id}>
+            <div className="col-6 client-say d-flex flex-column" style={{"backgroundColor": "white","border": "2px solid white","borderRadius": "20px","padding": "2px"}}>
+                <div className="my-auto">
+                    <p className="text-description fw-bold">
                         “{c.review}”
                     </p>
-                    <div class="d-flex name mt-4">
-                        <img src={`${Api.defaults.baseURL}${c.profilepic[0].url}`} class="me-3"/>
+                    <div className="d-flex name mt-4">
+                        <img src={`${Api.defaults.baseURL}${c.profilepic[0].url}`} className="me-3"/>
                         <div>
-                            <h3 class="text-sub fw-bold mb-1">
+                            <h3 className="text-sub fw-bold mb-1">
                                 {c.Username}
                             </h3>
                             <p>
@@ -85,15 +85,15 @@ const Client = () => {
                     </div>
                 </div>
             </div>
-            <div class="col-6 company-say d-flex flex-column"
+            <div className="col-6 company-say d-flex flex-column"
                 style={
                     {backgroundColor: "red"}
             }>
-                <div class="m-auto w-50">
-                    <h1 class="text-title text-white fw-bold">
+                <div className="m-auto w-50">
+                    <h1 className="text-title text-white fw-bold">
                         {c.review_title}
                     </h1>
-                    <p class="text-description text-white">
+                    <p className="text-description text-white">
                         {c.short_review}
                     </p>
                 </div>

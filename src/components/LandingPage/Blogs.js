@@ -93,10 +93,10 @@ const Blogs = () =>{
     const renderItems=BlogContents.map(b=>{
         if(b.id==showBlog){
             return(
-                <div class="p-3" key={b.id} >
-                <div class="lab-card position-relative">
-                    <img src="assets/img/lab-1.png" class="img-fluid"/>
-                    <div class="lab-text" onMouseEnter={(e=>{
+                <div className="p-3" key={b.id} >
+                <div className="lab-card position-relative">
+                    <img src="assets/img/lab-1.png" className="img-fluid"/>
+                    <div className="lab-text" onMouseEnter={(e=>{
                             e.preventDefault();
                             setBlogShow(b.id)
                         })} onMouseLeave={(e=>{
@@ -105,16 +105,16 @@ const Blogs = () =>{
                             setBlogShow(null)
                         })}>
                         <span>{b.duration} read</span>
-                        <h3 class="text-sub mb-1">{b.title}</h3>
+                        <h3 className="text-sub mb-1">{b.title}</h3>
                          <div className='description-blog-show'>
-                        <span class="text-70 fw-normal d-block">
+                        <span className="text-70 fw-normal d-block">
                             {b.description}
                         </span>
-                        <span class="text-70 fw-light d-block mt-2 mb-3">
+                        <span className="text-70 fw-light d-block mt-2 mb-3">
                             {b.date}
                         </span>
-                        <a href="" class="text-decoration-none text-danger fw-bold text-fwb">Read More
-                            <i class="bi bi-arrow-right-short"></i>
+                        <a href="" className="text-decoration-none text-danger fw-bold text-fwb">Read More
+                            <i className="bi bi-arrow-right-short"></i>
                         </a>
                     </div>
                     </div>
@@ -124,24 +124,24 @@ const Blogs = () =>{
         }
         else{
             return(
-                <div class="p-3" key={b.id}>
-                <div class="lab-card position-relative">
-                    <img src="assets/img/lab-1.png" class="img-fluid"/>
-                    <div class="lab-text" onMouseEnter={(e=>{
+                <div className="p-3" key={b.id}>
+                <div className="lab-card position-relative">
+                    <img src="assets/img/lab-1.png" className="img-fluid"/>
+                    <div className="lab-text" onMouseEnter={(e=>{
                             e.preventDefault();
                             setBlogShow(b.id)
                         })}>
                         <span>{b.duration} read</span>
-                        <h3 class="text-sub mb-1">{b.title}</h3>
+                        <h3 className="text-sub mb-1">{b.title}</h3>
                          <div className='description-blog-hide'>
-                        <span class="text-70 fw-normal d-block">
+                        <span className="text-70 fw-normal d-block">
                             {b.description}
                         </span>
-                        <span class="text-70 fw-light d-block mt-2 mb-3">
+                        <span className="text-70 fw-light d-block mt-2 mb-3">
                             {b.date}
                         </span>
-                        <a href="" class="text-decoration-none text-danger fw-bold text-fwb">Read More
-                            <i class="bi bi-arrow-right-short"></i>
+                        <a href="" className="text-decoration-none text-danger fw-bold text-fwb">Read More
+                            <i className="bi bi-arrow-right-short"></i>
                         </a>
                     </div>
                     </div>
