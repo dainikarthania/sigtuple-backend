@@ -800,3 +800,130 @@ footer i {
     color: #de1a1b;
     cursor: pointer;
 }
+
+.hover-sec {
+    position: relative;
+}
+
+.hover-sec:hover .main-hover {
+    display: flex;
+}
+
+.main-hover {
+    position: absolute;
+    display: none;
+    bottom: 20px;
+    left: 20px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 3px rgb(207, 207, 207);
+    background-color: #fff;
+    width: 400px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.text-img {
+    height: 165px;
+    overflow-y: auto;
+    display: flex;
+    padding-left: 25px;
+    padding-right: 5px;
+}
+
+.main-hover img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: auto 0;
+}
+
+.main-hover p {
+    display: flex;
+    font-weight: bold;
+}
+
+.main-hover p span {
+    margin-left: auto;
+}
+
+.main-hover .text-hover {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    padding-left: 15px;
+    padding-right: 25px;
+}
+
+.main-hover .text-hover::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 20px;
+}
+
+.main-hover .text-hover::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.main-hover .text-hover::-webkit-scrollbar-thumb {
+    background: rgb(207, 207, 207);
+}
+
+.main-hover .classified {
+    padding-left: 25px;
+    padding-top: 15px;
+    margin-top: 15px;
+    padding-right: 30px;
+}
+
+.main-hover .classified p {
+    border-radius: 10px;
+    width: 45%;
+}
+
+.boold-hover {
+    width: 150px;
+    font-size: 16px;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    position: absolute;
+    padding-top: 285px;
+    overflow-wrap: break-word;
+}
+.boold-hover-shrava {
+    width: 160px;
+    font-size: 16px;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    position: absolute;
+    overflow-wrap: break-word;
+}
+
+.blood-hover-none{
+    display: none;
+}
+.blood-hover-block{
+    display: block;
+}
+
+.blood-hover-shrava-none{
+    display: none;
+}
+.blood-hover-shrava-block{
+    display: block;
+}
+
+.analysis_bold{
+    font-size: 45px;
+}
+
+.hover-me:hover .boold-hover {
+    display: block;
+}
+.hover-me:hover .analysis_bold{
+    font-size: 45px;
+}
+.hover-me:hover .boold-hover-shrava {
+    display: block;
+}
+

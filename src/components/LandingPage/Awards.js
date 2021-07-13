@@ -12,8 +12,8 @@ const Awards = () =>{
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 3,
-        nextArrow: <NextArrow/>,
-        prevArrow: <PrevArrow/>};
+        nextArrow: <NextArrow ARROW_NEXT={`assets/img/right_arrow.png`}/>,
+        prevArrow: <PrevArrow ARROW_PREW={`assets/img/left_arrow.png`}/>};
 
     return (
         <div>

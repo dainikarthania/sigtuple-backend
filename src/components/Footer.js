@@ -32,9 +32,9 @@ const Footer = () =>{
                         <div className="col-4 d-flex">
                             <div className="flex-column d-flex justify-content-between h-100 mx-auto">
                                 <a href="" className="text-decoration-none text-danger fw-bold text-fwb">About Us</a>
-                                <a href="" className="text-decoration-none text-danger fw-bold text-fwb">Career</a>
-                                <a href="" className="text-decoration-none text-danger fw-bold text-fwb">Research</a>
                                 <a href="" className="text-decoration-none text-danger fw-bold text-fwb">Products</a>
+                                <a href="" className="text-decoration-none text-danger fw-bold text-fwb">Research</a>
+                                <a href="" className="text-decoration-none text-danger fw-bold text-fwb">Career</a>
                                 <a href="" className="text-decoration-none text-danger fw-bold text-fwb">Blog & News</a>
                                 <a href="" className="text-decoration-none text-danger fw-bold text-fwb">Contact Us</a>
                             </div>

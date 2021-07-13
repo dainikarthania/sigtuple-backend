@@ -47,22 +47,83 @@ const MicroProduct = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: <NextArrow styleNext={ai_100_next}/>,
-        prevArrow: <PrevArrow stylePrev={ai_100_prev}/>
+        nextArrow: <NextArrow styleNext={ai_100_next} ARROW_NEXT={`assets/img/right_arrow.png`}/>,
+        prevArrow: <PrevArrow stylePrev={ai_100_prev} ARROW_PREW={`assets/img/left_arrow.png`}/>
     };
 
     return (
-        <div>
+        <div className="hover-sec">
               <Slider {...setting_ai100}>
-                                <div>
-                                    <img src="assets/img/microscope.png" className="img-fluid mx-auto"/>
+                <div>
+                        <img src="assets/img/microscope.png" className="img-fluid mx-auto"/>
+                        <div class="main-hover row m-0 g-0">
+                                <div class="text-img">
+                                    <img src="assets/img/circle-dot.png" />
+                                    <div class="text-hover col">
+                                        <p class="text-description mt-auto ps-3">Neutrophil <span>2</span></p>
+                                        <p class="text-description mt-auto ps-3">Lymphocyte</p>
+                                        <p class="text-description mt-auto ps-3">Monocyte<span>1</span></p>
+                                        <p class="text-description mt-auto ps-3">Neutrophil</p>
+                                        <p class="text-description mt-auto ps-3">Lymphocyte</p>
+                                        <p class="text-description mt-auto ps-3">Monocyte</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <img src="assets/img/microscope.png" className="img-fluid mx-auto"/>
+                                <div class="col-12 d-flex classified border-top">
+                                    <p class="text-description mb-0 ps-3 bg-light px-2 py-1 text-danger">Unclassified
+                                        <span>1</span>
+                                    </p>
+                                    <p class="text-description mb-0 ps-3 bg-light px-2 py-1 text-danger ms-auto">
+                                        Rejected <span>7</span></p>
                                 </div>
-                                <div>
-                                    <img src="assets/img/microscope.png" className="img-fluid mx-auto"/>
+                            </div>
                                 </div>
+                <div>
+                        <img src="assets/img/microscope.png" className="img-fluid mx-auto"/>
+                        <div class="main-hover row m-0 g-0">
+                                <div class="text-img">
+                                    <img src="assets/img/circle-dot.png" />
+                                    <div class="text-hover col">
+                                        <p class="text-description mt-auto ps-3">Neutrophil <span>2</span></p>
+                                        <p class="text-description mt-auto ps-3">Lymphocyte</p>
+                                        <p class="text-description mt-auto ps-3">Monocyte<span>1</span></p>
+                                        <p class="text-description mt-auto ps-3">Neutrophil</p>
+                                        <p class="text-description mt-auto ps-3">Lymphocyte</p>
+                                        <p class="text-description mt-auto ps-3">Monocyte</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex classified border-top">
+                                    <p class="text-description mb-0 ps-3 bg-light px-2 py-1 text-danger">Unclassified
+                                        <span>1</span>
+                                    </p>
+                                    <p class="text-description mb-0 ps-3 bg-light px-2 py-1 text-danger ms-auto">
+                                        Rejected <span>7</span></p>
+                                </div>
+                            </div>
+                                </div>
+                <div>
+                        <img src="assets/img/microscope.png" className="img-fluid mx-auto"/>
+                        <div class="main-hover row m-0 g-0">
+                                <div class="text-img">
+                                    <img src="assets/img/circle-dot.png" />
+                                    <div class="text-hover col">
+                                        <p class="text-description mt-auto ps-3">Neutrophil <span>2</span></p>
+                                        <p class="text-description mt-auto ps-3">Lymphocyte</p>
+                                        <p class="text-description mt-auto ps-3">Monocyte<span>1</span></p>
+                                        <p class="text-description mt-auto ps-3">Neutrophil</p>
+                                        <p class="text-description mt-auto ps-3">Lymphocyte</p>
+                                        <p class="text-description mt-auto ps-3">Monocyte</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex classified border-top">
+                                    <p class="text-description mb-0 ps-3 bg-light px-2 py-1 text-danger">Unclassified
+                                        <span>1</span>
+                                    </p>
+                                    <p class="text-description mb-0 ps-3 bg-light px-2 py-1 text-danger ms-auto">
+                                        Rejected <span>7</span></p>
+                                </div>
+                            </div>
+                                </div>
+                    
             </Slider>
         </div>
     )

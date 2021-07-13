@@ -1,13 +1,12 @@
-.client-arrows .slick-prev:before {
+/* .client-arrows .slick-prev:before {
   color: #FFFFFF;
 }
 .client-arrows .slick-next:before {
   color: #FFFFFF;
-}
+} */
 
-.slick-prev:before,
-.slick-next:before {
-  color: #000000;
+.slick-next::before, .slick-prev::before {
+  content: none;
 }
 
 
@@ -29,3 +28,4 @@ display: none;
   width: 96px;
   border-radius: 112.5px;
 }
+

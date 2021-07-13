@@ -41,8 +41,11 @@ const BlogContents= [
     }
 ]
 
+let blogLen=BlogContents.length
+
 const Blogs = () =>{
     const [showBlog,setBlogShow]= useState(null)
+    const [currentIndex,setCurrentIndex]=useState(1)
 
     let blog_next = {
         display: "flex",
@@ -85,8 +88,12 @@ const Blogs = () =>{
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 3,
-        nextArrow: <NextArrow blogNext={blog_next}/>,
-        prevArrow: <PrevArrow blogPrev={blog_prev}/>
+        afterChange: (current) =>{
+            console.log("ff",current)
+            setCurrentIndex(current*3)
+        },
+        nextArrow: <NextArrow blogNext={blog_next} ARROW_NEXT={currentIndex <= blogLen ? `assets/img/right-arrow-black.png` : 'assets/img/right_arrow.png'} ARROW_SIZE={currentIndex <= blogLen ? "20px" : "12px"}/>,
+        prevArrow: <PrevArrow blogPrev={blog_prev} ARROW_PREW={currentIndex==1 ?`assets/img/left_arrow.png` : `assets/img/left-arrow-black.png`} ARROW_SIZE={currentIndex==1 ? "12px":"20px"}/>
 
     };
 

@@ -6,6 +6,8 @@ const PrevArrow = (props) => {
         clientPrev = null,
         blogPrev = null,
         reviewPrev =null,
+        ARROW_PREW,
+        ARROW_SIZE="12px",
         onClick
     } = props;
     let prevStyle = stylePrev || clientPrev || blogPrev || reviewPrev || {
@@ -33,7 +35,9 @@ const PrevArrow = (props) => {
                     ... prevStyle
                 }
             }
-            onClick={onClick}/>
+            onClick={onClick}>
+                <img src={ARROW_PREW} alt="arrow_left" style={{width:ARROW_SIZE,height:ARROW_SIZE}}/>
+            </div>
     );
 }
 

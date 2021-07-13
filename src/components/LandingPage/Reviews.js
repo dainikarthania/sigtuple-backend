@@ -48,8 +48,8 @@ const Reviews = () =>{
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 3,
-        nextArrow: <NextArrow reviewNext={nextArrow}/>,
-        prevArrow: <PrevArrow reviewPrev={prevArrow}/>};
+        nextArrow: <NextArrow reviewNext={nextArrow} ARROW_NEXT={`assets/img/right_arrow.png`}/>,
+        prevArrow: <PrevArrow reviewPrev={prevArrow} ARROW_PREW={`assets/img/left_arrow.png`}/>};
         
         useEffect(()=>{
             const getPublication = async () =>{

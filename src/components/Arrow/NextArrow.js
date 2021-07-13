@@ -7,7 +7,9 @@ const NextArrow = (props) => {
         clientNext = null,
         blogNext= null,
         reviewNext=null,
-        onClick
+        onClick,
+        ARROW_NEXT,
+        ARROW_SIZE="12px"
     } = props;
     let nextStyle = styleNext || clientNext || blogNext || reviewNext || {
         display: "flex",
@@ -36,7 +38,9 @@ const NextArrow = (props) => {
 
                 }
             }
-            onClick={onClick}/>
+            onClick={onClick}>
+             <img src={ARROW_NEXT} alt="arrow_left" style={{width:ARROW_SIZE,height:ARROW_SIZE}}/>
+        </div>
     );
 }
 

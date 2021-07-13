@@ -18,6 +18,9 @@ import Header from './Header';
 
 
 const LandingPage = () => {
+    const [shonitStyle,setShonitStyle]=useState(false)
+    const [shravaStyle,setShravaStyle]=useState(false)
+
     return (
         <div>
             <div className="container-fluid hero-banner">
@@ -26,34 +29,50 @@ const LandingPage = () => {
                     <div className="m-auto text-center">
                         <div id="zoom">
                             <div className="small">
-                                <h1>The<b> Future of Microscopy</b> Is Here!</h1>
+                                <h1>The<b> Future of Microscopy</b> is Here!</h1>
                                 <center><h2>We are democratizing microscopy through AI, robotics, and cloud computing.</h2></center>
                             </div>
                         </div>
-                        <div className="eye-section">
+                        
+                        <a href="#product_sections"><div className="eye-section">
                             <span className="text-danger font-regular fw-bold">Check our products</span>
                             <div className="eye mt-2">
                                 <img src="assets/img/eye.png"/>
                             </div>
                         </div>
+                        </a>
                         <div className="verticle"></div>
                     </div>
                 </div>
             </div>
 
+            <div id="product_sections">
             <div className="container-fluid microscope pt-5">
                 <div className="container">
                     <div className="row">
-                        <div className="w-auto my-auto d-flex flex-column">
+                        <div className="w-auto my-auto d-flex flex-column h-100 position-relative" onMouseEnter={(e=>{
+                            e.preventDefault()
+                            setShonitStyle(true)
+                            setShravaStyle(false)
+                        })} onMouseLeave={(e=>{
+                            e.preventDefault();
+                            console.log("hello 1")
+                            setShonitStyle(false)
+                        })}>
                             <div className="blood">
                                 <img src="assets/img/shonit.png"/>
                             </div>
                             <div className="mx-auto mt-3">
-                                <p className="text-description m-0">
-                                Blood
+                                <p className={`text-description m-0 ${shonitStyle ? `analysis_bold`:''}`}>
+                                 Blood
                                 </p>
-                                <p className="text-description m-0 fw-bold">Analyser</p>
+                                <p className={`text-description m-0 fw-bold ${shonitStyle ? "analysis_bold":''}`}>Analyser</p>
                             </div>
+                            <div className={`boold-hover mt-3 mx-auto ${shonitStyle ? `blood-hover-block`:'blood-hover-none'}`}>
+                               <p>Shonit is an automated peripheral blood smear slide analyzer</p>
+                        <button className="d-block px-4 explore mt-2">Explore
+                            <i className="bi bi-arrow-right-short"></i></button>
+                    </div>
                         </div>
                         <div className="col-8 mx-auto bg-white micro-product">
                             <div className="text-center mt-5">
@@ -68,19 +87,31 @@ const LandingPage = () => {
                             </button>
 
                         </div>
-                        <div className="w-auto my-auto d-flex flex-column">
+                         <div className="w-auto my-auto d-flex flex-column h-100 position-relative" onMouseEnter={(e=>{
+                            e.preventDefault()
+                            setShravaStyle(true)
+                        })} onMouseLeave={(e=>{
+                            e.preventDefault();
+                            console.log("hello 1")
+                            setShravaStyle(false)
+                        })}>
                             <div className="blood">
                                 <img src="assets/img/urine.png"/>
                             </div>
                             <div className="mx-auto mt-3">
-                                <p className="text-description m-0">Urine</p>
-                                <p className="text-description m-0 fw-bold">Analyser</p>
+                                <p className={`text-description m-0 ${shravaStyle ? `analysis_bold`:''}`}>Urine</p>
+                                <p className={`text-description m-0 fw-bold ${shravaStyle ? `analysis_bold`:''}`}>Analyser</p>
+                                <div className={`boold-hover-shrava mt-3 mx-auto ${shravaStyle ? `blood-hover-shrava-block`:'blood-hover-shrava-none'}`}>
+                               <p>Shrava is an automated peripheral blood smear slide analyzer</p>
+                                <button className="d-block px-4 explore mt-2">Explore
+                                <i className="bi bi-arrow-right-short"></i></button>
+                            </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+            </div>
             <SectionCounter />
             <VideoDescription/>
 
