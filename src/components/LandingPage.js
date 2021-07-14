@@ -98,10 +98,10 @@ const LandingPage = () => {
                             <div className="blood">
                                 <img src="assets/img/urine.png"/>
                             </div>
-                            <div className="mx-auto mt-3">
+                            <div className={`mt-3 mx-auto`}>
                                 <p className={`text-description m-0 ${shravaStyle ? `analysis_bold`:''}`}>Urine</p>
                                 <p className={`text-description m-0 fw-bold ${shravaStyle ? `analysis_bold`:''}`}>Analyser</p>
-                                <div className={`boold-hover-shrava mt-3 mx-auto ${shravaStyle ? `blood-hover-shrava-block`:'blood-hover-shrava-none'}`}>
+                                <div className={`boold-hover-shrava ${shravaStyle ? `blood-hover-shrava-block`:'blood-hover-shrava-none'}`}>
                                <p>Shrava is an automated peripheral blood smear slide analyzer</p>
                                 <button className="d-block px-4 explore mt-2">Explore
                                 <i className="bi bi-arrow-right-short"></i></button>

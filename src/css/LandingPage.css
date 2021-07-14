@@ -12,7 +12,7 @@
 
 .col-6.company-say.d-flex.flex-column {
   border-radius: 5%;
-  height: 300px;
+  height: 356px;
 }
 
 .description-blog-hide {
@@ -29,3 +29,27 @@ display: none;
   border-radius: 112.5px;
 }
 
+.relative_microscope {
+  position: relative;
+}
+.relative_microscope .microscope_text{
+  position: absolute;
+  background-color: #ffffff;
+  height: 91px;
+  width: 139px;
+  top: 130px;
+  right: 268px;
+  padding: 30px;
+}
+.client_sections {
+  height: 362px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+}
+.clients_text_sections{
+  padding: 10px;
+  font-size: 16px;
+  text-align: justify;
+}
+.clients_user_sections{
+  padding-left: 15px;
+}

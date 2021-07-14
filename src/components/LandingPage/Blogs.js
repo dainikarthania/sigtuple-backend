@@ -38,6 +38,27 @@ const BlogContents= [
         description:"Lorem Ipsum is simply dummy text of the printing and typesetting...",
         duration:"1 min",
         date:"Jan 2.02021"
+    },
+    {
+        id:5,
+        title:"what to do in covid 19",
+        description:"Lorem Ipsum is simply dummy text of the printing and typesetting...",
+        duration:"1 min",
+        date:"Jan 2.02021"
+    },
+    {
+        id:5,
+        title:"what to do in covid 19",
+        description:"Lorem Ipsum is simply dummy text of the printing and typesetting...",
+        duration:"1 min",
+        date:"Jan 2.02021"
+    },
+    {
+        id:5,
+        title:"what to do in covid 19",
+        description:"Lorem Ipsum is simply dummy text of the printing and typesetting...",
+        duration:"1 min",
+        date:"Jan 2.02021"
     }
 ]
 
@@ -89,11 +110,17 @@ const Blogs = () =>{
         slidesToShow: 3,
         slidesToScroll: 3,
         afterChange: (current) =>{
-            console.log("ff",current)
-            setCurrentIndex(current*3)
+            console.log(currentIndex,current)
+            if(current==0){
+                setCurrentIndex(1)
+            }else{
+                setCurrentIndex(current+3)
+            }
+            console.log(currentIndex,current)
+            
         },
-        nextArrow: <NextArrow blogNext={blog_next} ARROW_NEXT={currentIndex <= blogLen ? `assets/img/right-arrow-black.png` : 'assets/img/right_arrow.png'} ARROW_SIZE={currentIndex <= blogLen ? "20px" : "12px"}/>,
-        prevArrow: <PrevArrow blogPrev={blog_prev} ARROW_PREW={currentIndex==1 ?`assets/img/left_arrow.png` : `assets/img/left-arrow-black.png`} ARROW_SIZE={currentIndex==1 ? "12px":"20px"}/>
+        nextArrow: <NextArrow blogNext={blog_next} ARROW_NEXT={currentIndex < blogLen ? `assets/img/right-arrow-black.png` : 'assets/img/right_arrow.png'} ARROW_SIZE={currentIndex <  blogLen ? "20px" : "12px"}/>,
+        prevArrow: <PrevArrow blogPrev={blog_prev} ARROW_PREW={currentIndex == 1 ? `assets/img/left_arrow.png` : `assets/img/left-arrow-black.png`} ARROW_SIZE={currentIndex==1 ? "12px":"20px"}/>
 
     };
 

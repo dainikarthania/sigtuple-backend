@@ -24,7 +24,7 @@ const Client = () => {
         boxSizing: "border-box",
         borderRadius: "41px",
         left: 'calc(100% - 90px)',
-        top: "255px",
+        top: "300px",
         zIndex:20
     }
     let client_prev = {
@@ -41,7 +41,7 @@ const Client = () => {
         boxSizing: "border-box",
         borderRadius: "41px",
         left: 'calc(100% - 130px)',
-        top: "255px",
+        top: "300px",
         zIndex:20
     }
     const settings_clinet = {
@@ -76,13 +76,13 @@ const Client = () => {
 
     const renderItems = clients.map(c=>{
         return (
-            <div className="d-flex mx-0 px-2 pb-2" key={c.id}>
+            <div className="d-flex mx-0 px-2 pb-2 client_sections" key={c.id}>
             <div className="col-6 client-say d-flex flex-column" style={{"backgroundColor": "#FFFFFF",boxShadow:"0px 4px 14px rgba(112, 112, 112, 0.25)",borderRadius:"60px 60px 0px 60px","borderRadius": "20px","padding": "2px"}}>
                 <div className="my-auto">
-                    <p className="text-description fw-bold">
+                    <p className="text-description fw-bold clients_text_sections">
                         “{c.review}”
                     </p>
-                    <div className="d-flex name mt-4">
+                    <div className="d-flex name mt-4 clients_user_sections">
                         <img src={`${Api.defaults.baseURL}${c.profilepic[0].url}`} className="me-3"/>
                         <div>
                             <h3 className="text-sub fw-bold mb-1">
@@ -111,7 +111,7 @@ const Client = () => {
                     </p>
                     <div className="clientCount" style={{
                         //  left: 'calc(100% - 1300px)',
-                         top: 'calc(100% - 65px)',
+                         top: 'calc(100% - 69px)',
                          opacity: '.5',
                          position: 'absolute',
                          fontFamily: "Nunito Sans",

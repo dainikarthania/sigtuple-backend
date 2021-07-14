@@ -892,6 +892,7 @@ footer i {
 .boold-hover-shrava {
     width: 160px;
     font-size: 16px;
+    text-align: justify;
     font-family: Nunito Sans;
     font-style: normal;
     font-weight: normal;
@@ -903,6 +904,7 @@ footer i {
     display: none;
 }
 .blood-hover-block{
+    text-align: justify;
     display: block;
 }
 
@@ -910,6 +912,7 @@ footer i {
     display: none;
 }
 .blood-hover-shrava-block{
+    text-align: justify;
     display: block;
 }
 

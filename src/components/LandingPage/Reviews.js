@@ -7,6 +7,7 @@ import Api from '../../Api';
 
 const Reviews = () =>{
     const [publication,setPublication] = useState([])
+    const [currentIndex,setCurrentIndex]=useState(1)
 
     let nextArrow = {
         display: "flex",
@@ -48,13 +49,24 @@ const Reviews = () =>{
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 3,
-        nextArrow: <NextArrow reviewNext={nextArrow} ARROW_NEXT={`assets/img/right_arrow.png`}/>,
-        prevArrow: <PrevArrow reviewPrev={prevArrow} ARROW_PREW={`assets/img/left_arrow.png`}/>};
+        afterChange: (current) =>{
+            console.log(currentIndex,current)
+            if(current==0){
+                setCurrentIndex(1)
+            }else{
+                setCurrentIndex(current+3)
+            }
+            console.log(currentIndex,current)
+            
+        },
+        nextArrow: <NextArrow reviewNext={nextArrow} ARROW_NEXT={currentIndex < publication.length ? `assets/img/right-arrow-black.png` : 'assets/img/right_arrow.png'} ARROW_SIZE={currentIndex < publication.length ? "20px" : "12px"}/>,
+        prevArrow: <PrevArrow reviewPrev={prevArrow} ARROW_PREW={currentIndex == 1 ? `assets/img/left_arrow.png` : `assets/img/left-arrow-black.png`} ARROW_SIZE={currentIndex==1 ? "12px":"20px"}/>};
         
         useEffect(()=>{
             const getPublication = async () =>{
                 let data=await Api.get('/publications')
                 console.log(data)
+                console.log("publication.length",publication.length)
                 setPublication(data.data)
             }
             getPublication()
