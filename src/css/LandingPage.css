@@ -42,13 +42,14 @@ display: none;
   padding: 30px;
 }
 .client_sections {
-  height: 362px;
+  height: 363px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
 }
 .clients_text_sections{
   padding: 10px;
   font-size: 16px;
   text-align: justify;
+  margin-right: 70px;
 }
 .clients_user_sections{
   padding-left: 15px;

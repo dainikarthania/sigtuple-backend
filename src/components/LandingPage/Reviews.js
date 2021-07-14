@@ -8,6 +8,8 @@ import Api from '../../Api';
 const Reviews = () =>{
     const [publication,setPublication] = useState([])
     const [currentIndex,setCurrentIndex]=useState(1)
+    const [showArrow,setShowArrow]=useState(null)
+
 
     let nextArrow = {
         display: "flex",
@@ -83,8 +85,15 @@ const Reviews = () =>{
                     <p className="text-description mt-4">
                         {p.description.length > 150 ? `${p.description.substring(0,150)}...` : p.description}
                     </p>
-                    <span className="text-70 d-flex mt-auto">
+                    <span className="text-70 d-flex mt-auto" onMouseEnter={(e=>{
+                        setShowArrow(p.id)
+                     })} onMouseLeave={(e=>{
+                         setShowArrow(null)
+                     })}>
                         <img src="assets/img/bookmark.png" className="d-inline me-2 my-auto"/>{p.type}
+                        {showArrow === p.id ? <img src="assets/img/red_next_arrow.png" style={{position:"absolute",left:"257px"}} onClick={(e=>{
+                            window.open("http://google.com")
+                        })}/> : null }
                     </span>
                 </div>
             </div>

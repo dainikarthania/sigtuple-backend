@@ -77,7 +77,7 @@ const Client = () => {
     const renderItems = clients.map(c=>{
         return (
             <div className="d-flex mx-0 px-2 pb-2 client_sections" key={c.id}>
-            <div className="col-6 client-say d-flex flex-column" style={{"backgroundColor": "#FFFFFF",boxShadow:"0px 4px 14px rgba(112, 112, 112, 0.25)",borderRadius:"60px 60px 0px 60px","borderRadius": "20px","padding": "2px"}}>
+            <div className="col-6 client-say d-flex flex-column" style={{"backgroundColor": "#FFFFFF",boxShadow:"0px 4px 14px rgba(112, 112, 112, 0.25)",borderTopLeftRadius:"20px",borderBottomLeftRadius:"20px",padding: "2px",marginLeft:"5px"}}>
                 <div className="my-auto">
                     <p className="text-description fw-bold clients_text_sections">
                         “{c.review}”
@@ -102,6 +102,9 @@ const Client = () => {
                 style={
                     {backgroundColor: "red"}
             }>
+            <span className="transparent_section_client" style={{background: '#FFFFFF',
+            boxShadow: "0px 4px 14px rgba(112, 112, 112, 0.25)",
+            borderRadius: "60px 60px 0px 60px",position:"absolute",left:"457px",height:"356px",width:"61px"}}></span>
                 <div className="m-auto w-50">
                     <h1 className="text-title text-white fw-bold">
                         {c.review_title}

@@ -634,6 +634,7 @@ button {
     flex-direction: column;
     box-shadow: 0 5px 15px rgb(134 135 134 / 20%);
     border-radius: 30px;
+    position: relative;
 }
 
 .our-client {
