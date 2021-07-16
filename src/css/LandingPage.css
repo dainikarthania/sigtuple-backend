@@ -54,3 +54,40 @@ display: none;
 .clients_user_sections{
   padding-left: 15px;
 }
+.sticky_header{
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1;
+}
+.check_product{
+  position: absolute;
+  top:650px;
+  left:750px;
+  white-space: nowrap;
+}
+.position_relative_row{
+  position: relative;
+}
+.absolute_shonit{
+  position: absolute;
+  top: 190px;
+}
+.absolute_shrava{
+  position: absolute;
+  top: 190px;
+  left:1100px;
+}
+
+.shonit-hover-block{
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  display: flex;
+}
+
+.shrava-hover-block{
+  width: 150px;
+  height: 150px;
+  display: flex;
+}

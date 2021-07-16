@@ -11,7 +11,7 @@ const SectionCounter = () =>{
             let id=setTimeout(()=>{
                 let counter = accuracy + 1
                 setAccuracy(counter)
-            },100)
+            },10)
                return (()=>{
                    clearTimeout(id)
                })    
@@ -24,7 +24,7 @@ const SectionCounter = () =>{
             let id=setTimeout(()=>{
                 let counter = innovation + 1
                 setInnovation(counter)
-            },100)
+            },10)
                return (()=>{
                    clearTimeout(id)
                })    
@@ -37,7 +37,7 @@ const SectionCounter = () =>{
             let id=setTimeout(()=>{
                 let counter = acceptance + 1
                 setAcceptance(counter)
-            },100)
+            },10)
                return (()=>{
                    clearTimeout(id)
                })    

@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () =>{
 
     return (
-     <div>
+     <div className="sticky_header">
         <div className="container pt-4">
         <nav className="navbar">
             <div className="container-fluid">

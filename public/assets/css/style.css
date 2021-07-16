@@ -120,7 +120,8 @@ button {
 }
 
 .navbar button:hover {
-    box-shadow: 1px 1px 3px rgb(207, 207, 207);
+    box-shadow: 3px 4px 6px rgb(207, 207, 207);
+    background-color: #fff;
 }
 
 .navbar i {
@@ -503,6 +504,7 @@ button {
 .policy {
     height: 100vh;
     display: flex;
+    padding-left: 150px;
 }
 
 .policy h1 {
