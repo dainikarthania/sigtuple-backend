@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "publications",
   "info": {
-    "name": "Publication"
+    "name": "Publication",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -21,6 +22,9 @@
       "type": "datetime"
     },
     "description": {
+      "type": "string"
+    },
+    "url": {
       "type": "string"
     }
   }
