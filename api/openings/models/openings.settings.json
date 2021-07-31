@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "openings",
+  "info": {
+    "name": "Openings"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}
