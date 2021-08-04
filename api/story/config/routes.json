@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/tech-specifications",
-      "handler": "tech-specification.find",
+      "path": "/stories",
+      "handler": "story.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/tech-specifications/count",
-      "handler": "tech-specification.count",
+      "path": "/stories/count",
+      "handler": "story.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/tech-specifications/:id",
-      "handler": "tech-specification.findOne",
+      "path": "/stories/:id",
+      "handler": "story.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/tech-specifications",
-      "handler": "tech-specification.create",
+      "path": "/stories",
+      "handler": "story.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/tech-specifications/:id",
-      "handler": "tech-specification.update",
+      "path": "/stories/:id",
+      "handler": "story.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/tech-specifications/:id",
-      "handler": "tech-specification.delete",
+      "path": "/stories/:id",
+      "handler": "story.delete",
       "config": {
         "policies": []
       }
