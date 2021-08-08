@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "name": "bookings",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "product": {
+      "type": "enumeration",
+      "enum": [
+        "Shonit",
+        "Shrava"
+      ],
+      "default": "Shonit",
+      "required": true
+    },
+    "phone_no": {
+      "type": "string",
+      "required": true
+    },
+    "book_at": {
+      "type": "datetime"
+    }
+  }
+}
