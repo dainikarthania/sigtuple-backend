@@ -13,16 +13,20 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "type": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "publish_at": {
-      "type": "datetime"
+      "type": "datetime",
+      "required": true
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "url": {
       "type": "string"
