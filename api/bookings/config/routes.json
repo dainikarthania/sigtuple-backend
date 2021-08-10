@@ -71,6 +71,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/bookings/get/booking/solts",
+      "handler": "bookings.getBookingSlots",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
