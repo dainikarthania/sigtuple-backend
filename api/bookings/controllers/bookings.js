@@ -194,7 +194,7 @@ module.exports = {
                     <td>
                       <p>
                         Hello <%= data.name %> , <br />
-                        The Following Slot for <b>${book_time}</b>
+                        The Following Slot for <b>${book_time}</b> Has Been
                         has Confirmed !!
                       </p>
                 </tbody>
