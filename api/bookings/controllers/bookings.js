@@ -193,14 +193,9 @@ module.exports = {
                   <tr class="body-row">
                     <td>
                       <p>
-                        You have successfully booked for Sigtuple! 
-                        at <b>${book_time}</b>
-                      </p>
-                      <p>
-                        If you'd like to see more 
-                        details then, 
-                        just visit 
-                        <a href="http://13.59.179.118:3000/">Sigtuple</a>     
+                        Hello <%= data.name %>
+                        The Following Slot for <b>${book_time}</b>
+                        has Confirmed !!
                       </p>
                 </tbody>
               </table>
