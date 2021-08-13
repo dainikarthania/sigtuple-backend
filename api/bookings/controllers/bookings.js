@@ -193,7 +193,7 @@ module.exports = {
                   <tr class="body-row">
                     <td>
                       <p>
-                        Hello <%= data.name %>
+                        Hello <%= data.name %> , <br />
                         The Following Slot for <b>${book_time}</b>
                         has Confirmed !!
                       </p>
