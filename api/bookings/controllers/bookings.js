@@ -35,7 +35,7 @@ module.exports = {
                 data
             })
 
-            let book_time=moment(data.book_at).format("YYYY-MM-DD HH:mm:ss A")
+            let book_time=moment(data.book_at).utc().format("YYYY-MM-DD HH:mm:ss A")
             let objDeatils=Object.assign({},storeInfo,extraInfo,{book_time},{timeZone:extraInfo.timeZoneDetails.label},{comments:extraInfo.message.message})
             
             console.log("objDeatils",objDeatils)
@@ -109,7 +109,28 @@ module.exports = {
 
             await strapi.plugins.email.services.email.sendTemplatedEmail(
                 {
-                    to: 'demo@sigtuple.com'
+                    to: 'dainik.arthania@gmail.com'
+                },
+                emailTemplate,
+                {
+                    data: objDeatils
+                }
+            );
+
+
+            await strapi.plugins.email.services.email.sendTemplatedEmail(
+                {
+                    to: 'parthprince7272@gmail.com'
+                },
+                emailTemplate,
+                {
+                    data: objDeatils
+                }
+            );
+
+            await strapi.plugins.email.services.email.sendTemplatedEmail(
+                {
+                    to: 'rushabh@mindlogicsolution.com'
                 },
                 emailTemplate,
                 {
