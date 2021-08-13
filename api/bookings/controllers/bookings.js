@@ -109,7 +109,7 @@ module.exports = {
 
             await strapi.plugins.email.services.email.sendTemplatedEmail(
                 {
-                    to: 'dainik.arthania@gmail.com'
+                    to: 'demo@sigtuple.com'
                 },
                 emailTemplate,
                 {
