@@ -10,7 +10,8 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
 const { google } = require('googleapis');
 let privateKey = require('../../../config/googleServiceAccount.json')
-const _=require('lodash')
+const _ = require('lodash');
+const moment = require('moment');
 
 module.exports = {
     create: async ctx => {
@@ -34,11 +35,174 @@ module.exports = {
                 data
             })
 
+            let book_time=moment(data.book_at).format("YYYY-MM-DD HH:mm:ss A")
+            let objDeatils=Object.assign({},storeInfo,extraInfo,{book_time},{timeZone:extraInfo.timeZoneDetails.label},{comments:extraInfo.message.message})
+            
+            console.log("objDeatils",objDeatils)
+            let emailTemplate = {
+                subject: 'Sigtuple Bookings',
+                text: `Welcome on Sigtuple.`,
+                html: `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                <style>
+                table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+                }
+
+                th{
+                border: 1px solid #dddddd;
+                text-align: center;
+                }
+
+                td {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+                }
+
+                tr:nth-child(even) {
+                background-color: #dddddd;
+                }
+                </style>
+                </head>
+                <body>
+
+                <h2>SigTuple</h2>
+
+                <table>
+                <tr>
+                    <th colspan=2>Booking Details</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><%= data.name %></td>
+                </tr>
+                <tr>
+                    <td>Date & Time</td>
+                    <td><%= data.book_time %></td>
+                </tr>
+                <tr>
+                <td>Email</td>
+                <td><%= data.email %></td>
+                </tr>
+                <tr>
+                <td>Phone No</td>
+                <td><%= data.phone_no %></td>
+                </tr>
+                <tr>
+                <td>TimeZone</td>
+                <td><%= data.timeZone %></td>
+                </tr>
+                <tr>
+                <td>Comments</td>
+                <td><%= data.comments %></td>
+                </tr>
+                </table>
+
+                </body>
+                </html>`
+            };
+
+            await strapi.plugins.email.services.email.sendTemplatedEmail(
+                {
+                    to: 'demo@sigtuple.com'
+                },
+                emailTemplate,
+                {
+                    data: objDeatils
+                }
+            );
+
+
+            emailTemplate = {
+                subject: 'Sigtuple Bookings',
+                text: `Welcome on Sigtuple.`,
+                html: `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                <style>
+                body {
+                    padding: 0;
+                    background-color: #f7f7f7;
+                    text-align: center;
+                  }
+                  
+                  .email-table {
+                    width: 100%;
+                    background-color: #fff;
+                    margin: 40px auto;
+                    text-align: left;
+                    font-family: 'Montserrat', 'Helvetica Neue';
+                  }
+                  
+                  .header-row {
+                    background-color: #171717;
+                  }
+                  
+                  .body-row {
+                    background-color: #eeeeee;
+                  }
+                  
+                  h1 {
+                    font-size: 30px;
+                    font-weight: 100;
+                    color: #ffffff;
+                    margin-left: 30px;
+                  }
+                  
+                  p {
+                    font-size: 15px;
+                    margin-left: 30px;
+                  }                  
+                </style>
+                </head>
+                <body> 
+                <table class="email-table">
+                <tbody>
+                   <tr class="header-row">
+                    <td>
+                      <h1>Sigtuple</h1>
+                    </td>
+                  </tr>
+                  <tr class="body-row">
+                    <td>
+                      <p>
+                        You have successfully booked for Sigtuple! 
+                        at <b>${book_time}</b>
+                      </p>
+                      <p>
+                        If you'd like to see more 
+                        details then, 
+                        just visit 
+                        <a href="http://13.59.179.118:3000/">Sigtuple</a>     
+                      </p>
+                </tbody>
+              </table>
+              </body>
+                </html>`
+            };
+
+            await strapi.plugins.email.services.email.sendTemplatedEmail(
+                {
+                  to: objDeatils.email
+                },
+                emailTemplate,
+                {
+                    data: objDeatils
+                }
+            );
+
         }
         catch (e) {
+            console.log("eee",e)
             ctx.send({
                 type: false,
-                message:e.message
+                message: e.message
             })
         }
     },
@@ -221,22 +385,22 @@ module.exports = {
             ctx.send(e)
         }
     },
-    getBookingSlots : async ctx => {
+    getBookingSlots: async ctx => {
         let body = ctx.request.body
         try {
-            if(!body.book_at) return ctx.send({type:false,data:[]})
+            if (!body.book_at) return ctx.send({ type: false, data: [] })
             console.log(body.book_at)
-            let data = await strapi.services.bookings.find({book_at_gte:`${body.book_at}T00:00:00.000Z`,book_at_lte:`${body.book_at}T23:59:00.000Z`})
-            let slots=_.map(data,'book_at')
+            let data = await strapi.services.bookings.find({ book_at_gte: `${body.book_at}T00:00:00.000Z`, book_at_lte: `${body.book_at}T23:59:00.000Z` })
+            let slots = _.map(data, 'book_at')
             ctx.send({
-                type:true,
-                data:slots
+                type: true,
+                data: slots
             })
         }
         catch (e) {
             ctx.send({
-                type:false,
-                data:[]
+                type: false,
+                data: []
             })
         }
     }
